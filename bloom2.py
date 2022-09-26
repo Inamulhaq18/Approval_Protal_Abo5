@@ -9,7 +9,7 @@ def query(payload):
 
 
 Productname=st.text_input("Product Name","")
-keywords=st.text_input("Keywords","")
+keywords=""
 text="""
 Product Description for "White and Gold Knives":
 Beautiful and functional, these cutlery sets are perfect for every kitchen. The knives are designed to have a beautiful look, but are also strong and durable. With a range of different colors, you can find the perfect set for your kitchen. The sets come with an assortment of kitchen knives, including a chef knife, bread knife, and carving knife. The sets also come with a sheath for safe storage. These knives are dishwasher safe.
