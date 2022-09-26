@@ -7,7 +7,7 @@ def query(payload):
 	response = requests.post(API_URL, headers=headers, json=payload)
 	return response.json()
 
-st.write("Abo5 Text Generation AI - Investor Access")
+st.header("Abo5 Text Generation AI - Investor Access")
 Productname=st.text_input("Product Name","")
 keywords=""
 text="""
