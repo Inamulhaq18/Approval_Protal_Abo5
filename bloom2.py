@@ -40,4 +40,5 @@ output = query({
                         }
     })
 
+st.header("AI Generated Output:")
 st.write((output[0]["generated_text"]).replace(text,""))
