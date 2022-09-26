@@ -184,8 +184,8 @@ for index, row in pfa.iterrows():
        for i in dataa:#loop through the list(blue_img:[1,r1,2,21])
           urlsdataa=geturlfor(i,row)#this needs to return url for a 1,2,3,R1
           urlsdata.append(urlsdataa)
-          urlsdata=[urlsdata[0]]
-       imagevurl.append(urlsdata)
+          urlsdata=urlsdata[0]
+       imagevurl=imagevurl.append(urlsdata)
   
   
   #option1 value
