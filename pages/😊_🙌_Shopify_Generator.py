@@ -153,7 +153,10 @@ for index, row in pfa.iterrows():
          #strinng="'".join(templist)
          #image_link.append(strinng)
          #image_link=[image_link[0]]
-         image_link=[templist[0]]
+         if len(templist)==0:
+            templist=[""]
+         if len(templist)>0:
+            image_link=[templist[0]]
          image_link=dummyentries(image_link,rowlen)
          st.write("try:  ",image_link)
       
