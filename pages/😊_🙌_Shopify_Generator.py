@@ -89,7 +89,8 @@ for index, row in pfa.iterrows():
   print("*************************************************************************************************")
   print(row)
   rowlen=getrowlen(row)
-  
+  print("Rowlen: ",rowlen)
+  print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
   #handler
   handler=[]
   for i in range(1,rowlen+1):
