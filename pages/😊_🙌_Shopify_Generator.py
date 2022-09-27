@@ -187,8 +187,8 @@ for index, row in pfa.iterrows():
          if len(templist)!=rowlen:
             image_link=dummyentries(templist,rowlen)
             image_link=templist
-         st.write("dummyentries_______________:  ",image_link)
-         st.write("image_link:  ",image_link)
+         st.write("dummyentries_______________:  ",len(image_link))
+         st.write("image_link:  ",len(image_link))
          st.write("rowlen:  ",rowlen)
       
       
