@@ -86,6 +86,7 @@ def geturlfor(imgs,row):
 
 #The main program
 for index, row in pfa.iterrows():
+  print("*************************************************************************************************")
   print(row)
   rowlen=getrowlen(row)
   
