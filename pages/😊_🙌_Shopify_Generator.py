@@ -25,6 +25,7 @@ curr=conn.cursor()
 sql = "SELECT * FROM master_product_table"
 dat = pd.read_sql_query(sql,conn)
 pfa=dat
+conn.close()
 pfa=pfa[pfa["Product_id"]>650]
 pfa=pfa[pfa["Product_approval_status"]==1]
 pfa=pfa[pfa["shopify_status"]==0]
@@ -44,7 +45,11 @@ pfa=pfa.dropna(subset=['variety'])
 
 def getrowlen(row):
    try:
-      rowlen=len((row["variety"]['data']))
+      data_len=len((row["variety"]['data']))
+      img_sourcelen=0
+      if "imgsource" in row["variety"]:
+         img_sourcelen=len((row["variety"]["imgsource"]))
+      rowlen=max(data_len,img_sourcelen)  
    except KeyError as error:
       rowlen=1
    return(rowlen)
@@ -80,6 +85,7 @@ def geturlfor(imgs,row):
 
 #The main program
 for index, row in pfa.iterrows():
+  st.write(type(row["variety"]["imgsource"]))
   rowlen=getrowlen(row)
   
   #handler
