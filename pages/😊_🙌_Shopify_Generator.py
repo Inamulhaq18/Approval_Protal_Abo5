@@ -7,6 +7,7 @@ from sqlalchemy import delete
 import pandas as pd
 import streamlit as st 
 import psycopg2
+from st_aggrid import AgGrid
 
 
 engine = create_engine("postgresql://hkmuctkbhmlhsr:59563300aab6c650f8bbc9cc4153df6a42054b71e9be00dda420f40bbbf791b2@ec2-54-76-43-89.eu-west-1.compute.amazonaws.com:5432/dd8a5bspvhrk8c", echo = False)
@@ -85,7 +86,7 @@ def geturlfor(imgs,row):
 
 #The main program
 for index, row in pfa.iterrows():
-  
+  AgGrid(row)
   st.write(row)
   rowlen=getrowlen(row)
   
