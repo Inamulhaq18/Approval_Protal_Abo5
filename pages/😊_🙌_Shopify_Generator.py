@@ -209,7 +209,7 @@ for index, row in pfa.iterrows():
                urlsdata.append(urlsdataa)
             urlsdata=urlsdata[0]
             imagevurl=urlsdata
-      if row["variety"]["type"]=="Select":
+     if row["variety"]["type"]=="Select":
           imagevurl=[""]
           imagevurl=dummyentries(imagevurl,rowlen)
   
