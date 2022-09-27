@@ -52,9 +52,9 @@ def getrowlen(row):
          img_sourcelen=len((row["variety"]["imgsource"]))
          print("img_sourcelen :",img_sourcelen)
          rowlen=max(data_len,img_sourcelen)  
-   except KeyError as error:e
+   except KeyError as error:
       rowlen=1
-  return(rowlen)
+   return(rowlen)
 
 def handler(row):
   handler.append(row['Product_Name_en'].replace("","_"))
