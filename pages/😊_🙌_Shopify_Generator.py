@@ -180,11 +180,7 @@ for index, row in pfa.iterrows():
          #image_link.append(strinng)
          #image_link=[image_link[0]]
          st.write("_______________TEMPLIST____________",len(templist))
-         if len(templist)==0:
-            templist=[""]
-            image_link=dummyentries(templist,rowlen)
-         if len(templist)!=rowlen:
-            image_link=dummyentries(templist,rowlen)
+         image_link=templist
          st.write("dummyentries_______________:  ",len(image_link))
          st.write("image_link:  ",len(image_link))
          st.write("rowlen:  ",rowlen)
