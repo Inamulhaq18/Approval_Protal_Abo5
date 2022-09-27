@@ -151,7 +151,7 @@ for index, row in pfa.iterrows():
     option1=[row["variety"]["type"]]
     st.write("else")
   option1=dummyentries(option1,rowlen)
-  st.write(option1)
+  st.write(len(option1))
 
   #Option1 Value
   try:
