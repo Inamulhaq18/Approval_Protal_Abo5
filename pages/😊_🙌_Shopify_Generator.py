@@ -219,7 +219,6 @@ for index, row in pfa.iterrows():
   
   
   #option1 value{"type": "color","data": ["blue"],"blue_img": [4]
-  option1=[]
   if row["variety"]["type"]!="Select":
      option1val=row["variety"]["type"]
   else:
