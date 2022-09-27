@@ -143,11 +143,14 @@ for index, row in pfa.iterrows():
   dummyentries(Published,rowlen)
 
   #Option1 Name
+  option1=[]
   if row["variety"]["type"]=="Select":
     option1=[""]
+    st.write("if")
   else:
     option1=[row["variety"]["type"]]
-  dummyentries(option1,rowlen)
+    st.write("else")
+  option1=dummyentries(option1,rowlen)
 
   #Option1 Value
   try:
