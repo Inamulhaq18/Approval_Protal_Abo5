@@ -45,8 +45,14 @@ list(shopifycolumnss.columns)
 pfa=pfa.dropna(subset=['variety'])
 
 def getrowlen(row):
-     img_len=len((row["variety"]["imgsource"]))
-     data_len=len((row["variety"]['data']))
+     try:
+      img_len=len((row["variety"]["imgsource"]))
+     except:
+      img_len=0
+     try:
+          data_len=len((row["variety"]['data']))
+     except:
+      data_len=0
      rowlen=max(img_len,data_len)
      return(rowlen)
 #    try:
