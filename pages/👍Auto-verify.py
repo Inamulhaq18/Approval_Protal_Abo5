@@ -15,10 +15,13 @@ import urllib.request
 
 st.header("Hi, Sufiyan")
 def skip(product_id):
+        conn=psycopg2.connect("postgresql://hkmuctkbhmlhsr:59563300aab6c650f8bbc9cc4153df6a42054b71e9be00dda420f40bbbf791b2@ec2-54-76-43-89.eu-west-1.compute.amazonaws.com:5432/dd8a5bspvhrk8c") 
+        curr=conn.cursor()
         sql_select_queryskip = """UPDATE master_product_table SET "Product_approval_status"= %s WHERE "Product_id" = %s"""
         status=str("8")
         curr.execute(sql_select_queryskip, (status,str(product_id),))
         conn.commit()
+        conn.close()
 #initialize the database connection
 
 conn=psycopg2.connect("postgresql://hkmuctkbhmlhsr:59563300aab6c650f8bbc9cc4153df6a42054b71e9be00dda420f40bbbf791b2@ec2-54-76-43-89.eu-west-1.compute.amazonaws.com:5432/dd8a5bspvhrk8c") 
@@ -36,7 +39,7 @@ def imageprocessapi(links):
 #loading the data
 sql = "SELECT * FROM master_product_table"
 dat = pd.read_sql_query(sql,conn)
-con.close ()
+conn.close ()
 pfa=dat.copy()
 st.title("Product Approval Portal - Auto 👍")
 pfa=pfa[pfa["Product_id"]>687]
