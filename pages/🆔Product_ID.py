@@ -47,7 +47,7 @@ if index!=0:
                 pfa=pfa[pfa["Product_id"]==index]
 
 
-                pfa=pfa[pfa["Product_approval_status"]==0]
+                #pfa=pfa[pfa["Product_approval_status"]==0]
                 if pfa.shape[0] ==0:
                         "No New Product Available to approve 😔"
                 if pfa.shape[0] !=0:
