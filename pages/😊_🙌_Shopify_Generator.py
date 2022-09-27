@@ -243,7 +243,7 @@ for index, row in pfa.iterrows():
   print(handler)
   print("_______________________________________________________________________________________________________________________________")
 st.header("😊 🙌")
-st.header("Yay ! '{}'  Products Ready to be uploaded ".format(dfshopify.shape[0]))
+st.header("Yay ! '{}'  Products Ready to be uploaded ".format(dfshopify["Handle"].nunique()]))
 st.header("")
 dfshopify['Status']="Active"
 dfshopify['Gift Card']="FALSE"
