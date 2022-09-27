@@ -85,7 +85,8 @@ def geturlfor(imgs,row):
 
 #The main program
 for index, row in pfa.iterrows():
-  st.write(type(row["variety"]["imgsource"]))
+  
+  st.write(row)
   rowlen=getrowlen(row)
   
   #handler
