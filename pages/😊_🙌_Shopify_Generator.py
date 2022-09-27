@@ -50,7 +50,7 @@ def getrowlen(row):
       rowlen=data_len
       if "imgsource" in row["variety"]:
          img_sourcelen=len((row["variety"]["imgsource"]))
-         print("img_sourcelen :",img_sourcelen)
+         print("img_sourcelen+}+}+}+}+}}}+}}+}}+}+}}}+}}}+}+}+}+}+}+}+ :",row["variety"]["imgsource"])
          rowlen=max(data_len,img_sourcelen)  
    except KeyError as error:
       rowlen=1
