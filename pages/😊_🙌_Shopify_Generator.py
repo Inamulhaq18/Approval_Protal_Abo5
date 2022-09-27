@@ -183,6 +183,7 @@ for index, row in pfa.iterrows():
             templist=[""]
          if len(templist)>0:
             image_link=dummyentries(templist,rowlen)
+         st.write("dummyentries_______________:  ",image_link)
          st.write("image_link:  ",image_link)
          st.write("rowlen:  ",rowlen)
       
