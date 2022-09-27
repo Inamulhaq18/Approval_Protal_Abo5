@@ -76,7 +76,7 @@ def dummyentries(lst,rowlen):
      lst.append("")
    return(lst)
 handler=[]
-Title=[ ]
+Title=[]
 rowdata={}
 
 dfshopify=pd.DataFrame(columns=shopifycolumns)
@@ -181,7 +181,8 @@ for index, row in pfa.iterrows():
          st.write("_______________TEMPLIST____________",len(templist))
          if len(templist)==0:
             templist=[""]
-         if len(templist)>0:
+            dummyentries(templist,rowlen)
+         if len(templist)!=rowlen:
             image_link=dummyentries(templist,rowlen)
          st.write("dummyentries_______________:  ",image_link)
          st.write("image_link:  ",image_link)
