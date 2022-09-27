@@ -86,8 +86,7 @@ def geturlfor(imgs,row):
 
 #The main program
 for index, row in pfa.iterrows():
-  AgGrid(row)
-  st.write(row)
+  print(row)
   rowlen=getrowlen(row)
   
   #handler
