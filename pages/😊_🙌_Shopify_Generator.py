@@ -47,10 +47,11 @@ pfa=pfa.dropna(subset=['variety'])
 def getrowlen(row):
    try:
       data_len=len((row["variety"]['data']))
-      img_sourcelen=0
+      rowlen=data_len
       if "imgsource" in row["variety"]:
          img_sourcelen=len((row["variety"]["imgsource"]))
-      rowlen=max(data_len,img_sourcelen)  
+         print("img_sourcelen :",img_sourcelen)
+         rowlen=max(data_len,img_sourcelen)  
    except KeyError as error:
       rowlen=1
    return(rowlen)
