@@ -72,7 +72,7 @@ def handler(row):
   return(handler)
 
 def dummyentries(lst,rowlen):
-   for i in range(1,rowlen):
+   for i in range(len(lst),rowlen):
      lst.append("")
    return(lst)
 handler=[]
@@ -182,11 +182,9 @@ for index, row in pfa.iterrows():
          st.write("_______________TEMPLIST____________",len(templist))
          if len(templist)==0:
             templist=[""]
-            dummyentries(templist,rowlen)
-            image_link=templist
+            image_link=dummyentries(templist,rowlen)
          if len(templist)!=rowlen:
             image_link=dummyentries(templist,rowlen)
-            image_link=templist
          st.write("dummyentries_______________:  ",len(image_link))
          st.write("image_link:  ",len(image_link))
          st.write("rowlen:  ",rowlen)
