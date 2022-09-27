@@ -214,15 +214,13 @@ for index, row in pfa.iterrows():
           imagevurl=dummyentries(imagevurl,rowlen)
   
   
-  #option1 value
-  option1val=[""]
-  if rowlen==1:
-    dummyentries(option1val,rowlen)
-  if rowlen>1:
-    option1val=row["variety"]['data']
-
-
-
+  #option1 value{"type": "color","data": ["blue"],"blue_img": [4]
+  option1=[]
+  if row["variety"]["type"]!="Select":
+     option1val=row["variety"]["type"]
+  else:
+     option1val=[""]
+  option1val=dummyentries(option1val,rowlen)
   print(option1val)
   print(imagevurl)
   # for h in handler:
