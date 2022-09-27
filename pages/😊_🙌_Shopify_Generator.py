@@ -148,7 +148,7 @@ for index, row in pfa.iterrows():
     option1=[""]
     st.write("if")
   else:
-    option1=[row["variety"]["data"]]
+    option1=[row["variety"]["type"]]
     st.write("else")
   option1=dummyentries(option1,rowlen)
   st.write(len(option1))
@@ -156,10 +156,10 @@ for index, row in pfa.iterrows():
   #Option1 Value
   try:
     option1_val=(row["variety"]["data"])
-  
+    option1_val=dummyentries(option1_val,rowlen)
   except KeyError as error:
     option1_val=[""]
-    dummyentries(option1_val,rowlen)
+    option1_val=dummyentries(option1_val,rowlen)
 
   #'Variant Price',price
   price=[row["Product_price"]]
