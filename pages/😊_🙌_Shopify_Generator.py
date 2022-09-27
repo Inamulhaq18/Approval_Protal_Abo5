@@ -171,7 +171,6 @@ for index, row in pfa.iterrows():
   imgsrc=[row["variety"]]
   image_link=[]
   try:
-      st.write("before try:  ",image_link)
       templist=[]
       if "imgsource" in row["variety"]:
          for item in row["variety"]["imgsource"]:
@@ -179,10 +178,11 @@ for index, row in pfa.iterrows():
          #strinng="'".join(templist)
          #image_link.append(strinng)
          #image_link=[image_link[0]]
+         st.write("_______________TEMPLIST____________",len(templist))
          if len(templist)==0:
             templist=[""]
          if len(templist)>0:
-            image_link=dummyentries(templist,rowlen-1)
+            image_link=dummyentries(templist,rowlen)
          st.write("image_link:  ",image_link)
          st.write("rowlen:  ",rowlen)
       
