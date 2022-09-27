@@ -154,7 +154,7 @@ for index, row in pfa.iterrows():
     option1_val=(row["variety"]["data"])
   
   except KeyError as error:
-    option1_val=""
+    option1_val=[""]
     dummyentries(option1_val,rowlen)
 
   #'Variant Price',price
