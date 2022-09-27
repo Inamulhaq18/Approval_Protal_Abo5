@@ -164,6 +164,7 @@ for index, row in pfa.iterrows():
          if len(templist)>0:
             image_link=dummyentries(templist,rowlen)
          st.write("image_link:  ",image_link)
+         st.write("rowlen:  ",rowlen)
       
       
    
