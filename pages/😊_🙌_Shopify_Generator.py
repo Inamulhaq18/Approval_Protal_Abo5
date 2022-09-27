@@ -90,6 +90,7 @@ for index, row in pfa.iterrows():
   print(row)
   rowlen=getrowlen(row)
   print("Rowlen: ",rowlen)
+  print("Imgesrc: ",len((row["variety"]["imgsource"])))
   print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
   #handler
   handler=[]
