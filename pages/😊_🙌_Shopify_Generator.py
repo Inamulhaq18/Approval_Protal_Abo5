@@ -146,12 +146,12 @@ for index, row in pfa.iterrows():
   option1=[]
   if row["variety"]["type"]=="Select":
     option1=[""]
-    st.write("if")
+    #st.write("if")
   else:
     option1=[row["variety"]["type"]]
-    st.write("else")
+    #st.write("else")
   option1=dummyentries(option1,rowlen)
-  st.write(len(option1))
+  #st.write(len(option1))
 
   #Option1 Value
   try:
@@ -173,24 +173,24 @@ for index, row in pfa.iterrows():
   try:
       templist=[]
       if "imgsource" in row["variety"]:
-         st.write("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+         #st.write("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
          for item in row["variety"]["imgsource"]:
             templist.append(geturlfor(item,row))
          #strinng="'".join(templist)
          #image_link.append(strinng)
          #image_link=[image_link[0]]
-         st.write("_______________TEMPLIST____________",len(templist))
+         #st.write("_______________TEMPLIST____________",len(templist))
          image_link=templist
-         st.write("dummyentries_______________:  ",len(image_link))
-         st.write("image_link:  ",len(image_link))
-         st.write("rowlen:  ",rowlen)
+#          st.write("dummyentries_______________:  ",len(image_link))
+#          st.write("image_link:  ",len(image_link))
+#          st.write("rowlen:  ",rowlen)
       
       
    
   except KeyError as error:
     image_link=[""]
     dummyentries(image_link,rowlen)
-    st.write("except  :",image_link)
+    #st.write("except  :",image_link)
 
 
   #imageposition
@@ -228,7 +228,7 @@ for index, row in pfa.iterrows():
   # for h in handler:
   #   a={'Handle': h}
   #   df1=df1.append(a, ignore_index = True)
-  st.write(len(handler),len(Title),len(Body),len(vendor_),len(CPT),len(tags),len(option1),len(option1_val),len(Published),len(price),len(imageposition),len(image_link),len(imagevurl))
+  #st.write(len(handler),len(Title),len(Body),len(vendor_),len(CPT),len(tags),len(option1),len(option1_val),len(Published),len(price),len(imageposition),len(image_link),len(imagevurl))
   dftemp=pd.DataFrame({'Handle':handler,'Title':Title,'Body (HTML)':Body,'Vendor':vendor_,'Custom Product Type':CPT,'Tags':tags,'Option1 Name':option1,'Option1 Value':option1_val,'Published':Published,'Variant Price':price,'Image Position':imageposition,'Image Src':image_link,'Variant Image':imagevurl})
   dfshopify=dfshopify.append(dftemp,ignore_index=True)
   dftemp=pd.DataFrame({'Handle':handler})
