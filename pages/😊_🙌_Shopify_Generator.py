@@ -206,12 +206,14 @@ for index, row in pfa.iterrows():
           for option in row["variety"]['data']:
            if (option+"_img") in row["variety"]:
             dataa=row["variety"][option+"_img"]
-            urlsdata=[]
-            for i in dataa:#loop through the list(blue_img:[1,r1,2,21])
-               urlsdataa=geturlfor(i,row)#this needs to return url for a 1,2,3,R1
-               urlsdata.append(urlsdataa)
-            urlsdata=urlsdata[0]
-            imagevurl=urlsdata
+            #urlsdata=[]
+            urlsdataa=geturlfor(dataa[0],row)#this needs to return url for a 1,2,3,R1
+            urlsdata.append(urlsdataa)
+
+          imagevurl=urlsdata
+          if len(urlsdata)<rowlen:
+               imagevurl=dummyentries(imagevurl,rowlen)
+               
      if row["variety"]["type"]=="Select":
           imagevurl=[""]
           imagevurl=dummyentries(imagevurl,rowlen)
