@@ -134,7 +134,7 @@ for index, row in pfa.iterrows():
 
   #Tags
   tags=[]
-  tags=[str(row['Product_Category'].strip()+", " + row['Product_subcategory'].strip())]
+  tags=[str(row['Product_Category'].strip()+", " + row['Product_subcategory'].strip()+", " + "ABO5 system")]
   dummyentries(tags,rowlen) 
   
   #Published
