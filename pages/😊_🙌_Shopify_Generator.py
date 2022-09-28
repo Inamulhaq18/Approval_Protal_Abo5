@@ -243,54 +243,54 @@ for index, row in pfa.iterrows():
       VIT=["shopify"]*rowlen
   if varientstatus==0:
        VIT=["shopify"]
-       Published=dummyentries(Published,rowlen)
+       VIT=dummyentries(VIT,rowlen)
    
  #Gift Card
   if varientstatus==1:
       gift=["FALSE"]*rowlen
   if varientstatus==0:
        gift=["FALSE"]
-       Published=dummyentries(Published,rowlen)
+       gift=dummyentries(gift,rowlen)
   
 #Variant Inventory Qty
   if varientstatus==1:
       VIQ=["50"]*rowlen
   if varientstatus==0:
        VIQ=["50"]
-       Published=dummyentries(Published,rowlen)
+       VIQ=dummyentries(VIQ,rowlen)
 
  #Variant Inventory Policy
   if varientstatus==1:
       VIP=["deny"]*rowlen
   if varientstatus==0:
        VIP=["deny"]
-       Published=dummyentries(Published,rowlen)
+       VIP=dummyentries(VIP,rowlen)
   #Variant Fulfillment Service
   if varientstatus==1:
       VFS=["manual"]*rowlen
   if varientstatus==0:
        VFS=["manual"]
-       Published=dummyentries(Published,rowlen)
+       VFS=dummyentries(VFS,rowlen)
    #Variant Price
   if varientstatus==1:
-      gift=[price]*rowlen
+      VP=[price]*rowlen
   if varientstatus==0:
-       gift=[""]
-       Published=dummyentries(Published,rowlen)
+       VP=[""]
+       VP=dummyentries(VP,rowlen)
   
 #Variant Taxable
   if varientstatus==1:
       VT=["True"]*rowlen
   if varientstatus==0:
        VT=[""]
-       Published=dummyentries(Published,rowlen)
+       VT=dummyentries(VT,rowlen)
  
 #Status
   if varientstatus==1:
-      gift=["Active"]*rowlen
+      status__=["Active"]*rowlen
   if varientstatus==0:
-       gift=["Active"]
-       Published=dummyentries(Published,rowlen)
+       status__=["Active"]
+       status__=dummyentries(status__,rowlen)
      
      
   print(option1val)
@@ -299,7 +299,7 @@ for index, row in pfa.iterrows():
   #   a={'Handle': h}
   #   df1=df1.append(a, ignore_index = True)
   #st.write(len(handler),len(Title),len(Body),len(vendor_),len(CPT),len(tags),len(option1),len(option1_val),len(Published),len(price),len(imageposition),len(image_link),len(imagevurl))
-  dftemp=pd.DataFrame({'Handle':handler,'Title':Title,'Body (HTML)':Body,'Vendor':vendor_,'Custom Product Type':CPT,'Tags':tags,'Option1 Name':option1,'Option1 Value':option1_val,'Published':Published,'Variant Price':price,'Image Position':imageposition,'Image Src':image_link,'Variant Image':imagevurl})
+  dftemp=pd.DataFrame({'Handle':handler,'Title':Title,'Body (HTML)':Body,'Vendor':vendor_,'Custom Product Type':CPT,'Tags':tags,'Option1 Name':option1,'Option1 Value':option1_val,'Published':Published,'Variant Price':price,'Image Position':imageposition,'Image Src':image_link,'Variant Image':imagevurl,'Variant Inventory Tracker':VIT,'Variant Inventory Qty':VIQ,'Variant Inventory Policy':VIP,'Variant Fulfillment Service':VFS,'Variant Price':VP,"Variant Taxable":VT,"Gift Card":gift,"Status":status__."":})
   dfshopify=dfshopify.append(dftemp,ignore_index=True)
   dftemp=pd.DataFrame({'Handle':handler})
   
@@ -315,17 +315,7 @@ for index, row in pfa.iterrows():
 st.header("😊 🙌")
 st.header("Yay ! '{}'  Products Ready to be uploaded ".format(dfshopify["Handle"].nunique()))
 st.header("")
-dfshopify['Status']="Active"
-dfshopify['Gift Card']="FALSE"
-dfshopify['Variant Taxable']='TRUE'
-dfshopify['Variant Fulfillment Service']='manual'
-dfshopify['Variant Inventory Policy']='deny'
-dfshopify['Variant Inventory Tracker']='shopify'
-dfshopify['Variant Inventory Qty']='50'
-dfshopify['Published']='TRUE'
-dfshopify['Published']='TRUE'
-dfshopify['Published']='TRUE'
-dfshopify['Published']='TRUE'
+
 
 st.write(dfshopify)
 
