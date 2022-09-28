@@ -152,6 +152,10 @@ for index, row in pfa.iterrows():
     #st.write("else")
   option1=dummyentries(option1,rowlen)
   #st.write(len(option1))
+  if option1[0]!="":
+      varientstatus=0
+  else
+      varientstatus=1
 
   #Option1 Value
   try:
@@ -241,11 +245,51 @@ for index, row in pfa.iterrows():
        VIT=["shopify"]
        Published=dummyentries(Published,rowlen)
    
-  #Gift Card
+ #Gift Card
   if varientstatus==1:
       gift=["FALSE"]*rowlen
   if varientstatus==0:
        gift=["FALSE"]
+       Published=dummyentries(Published,rowlen)
+  
+#Variant Inventory Qty
+  if varientstatus==1:
+      VIQ=["50"]*rowlen
+  if varientstatus==0:
+       VIQ=["50"]
+       Published=dummyentries(Published,rowlen)
+
+ #Variant Inventory Policy
+  if varientstatus==1:
+      VIP=["deny"]*rowlen
+  if varientstatus==0:
+       VIP=["deny"]
+       Published=dummyentries(Published,rowlen)
+  #Variant Fulfillment Service
+  if varientstatus==1:
+      VFS=["manual"]*rowlen
+  if varientstatus==0:
+       VFS=["manual"]
+       Published=dummyentries(Published,rowlen)
+   #Variant Price
+  if varientstatus==1:
+      gift=[price]*rowlen
+  if varientstatus==0:
+       gift=[""]
+       Published=dummyentries(Published,rowlen)
+  
+#Variant Taxable
+  if varientstatus==1:
+      VT=["True"]*rowlen
+  if varientstatus==0:
+       VT=[""]
+       Published=dummyentries(Published,rowlen)
+ 
+#Status
+  if varientstatus==1:
+      gift=["Active"]*rowlen
+  if varientstatus==0:
+       gift=["Active"]
        Published=dummyentries(Published,rowlen)
      
      
