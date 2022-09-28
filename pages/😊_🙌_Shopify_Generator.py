@@ -226,6 +226,29 @@ for index, row in pfa.iterrows():
   else:
      option1val=[""]
   option1val=dummyentries(option1val,rowlen)
+  
+    #Published
+  if varientstatus==1:
+      Published=["TRUE"]*rowlen
+  if varientstatus==0:
+       Published=["TRUE"]
+       Published=dummyentries(Published,rowlen)
+   
+  #Varient inventory Tracking
+  if varientstatus==1:
+      VIT=["shopify"]*rowlen
+  if varientstatus==0:
+       VIT=["shopify"]
+       Published=dummyentries(Published,rowlen)
+   
+  #Gift Card
+  if varientstatus==1:
+      gift=["FALSE"]*rowlen
+  if varientstatus==0:
+       gift=["FALSE"]
+       Published=dummyentries(Published,rowlen)
+     
+     
   print(option1val)
   print(imagevurl)
   # for h in handler:
