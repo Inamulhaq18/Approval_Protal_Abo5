@@ -203,6 +203,7 @@ for index, row in pfa.iterrows():
       imagevurl=[""]
   if rowlen > 1:
      if row["variety"]["type"]!="Select":
+          urlsdata=[]
           for option in row["variety"]['data']:
            if (option+"_img") in row["variety"]:
             dataa=row["variety"][option+"_img"]
