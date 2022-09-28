@@ -154,7 +154,7 @@ for index, row in pfa.iterrows():
   #st.write(len(option1))
   if option1[0]!="":
       varientstatus=0
-  else
+  else:
       varientstatus=1
 
   #Option1 Value
