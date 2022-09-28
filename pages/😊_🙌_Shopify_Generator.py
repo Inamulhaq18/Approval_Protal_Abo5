@@ -116,10 +116,6 @@ for index, row in pfa.iterrows():
   tags=[str(row['Product_Category'].strip()+", " + row['Product_subcategory'].strip())]
   dummyentries(tags,rowlen) 
   
-  #Published
-  Published=[]
-  Published=["TRUE"]
-  dummyentries(Published,rowlen)
 
   #Option1 Name
   if row["variety"]["type"]=="Select":
@@ -127,6 +123,10 @@ for index, row in pfa.iterrows():
   else:
     option1=[row["variety"]["type"]]
   dummyentries(option1,rowlen)
+  if option1[0]!="":
+      varientstatus=0
+  else
+      varientstatus=1
 
   #Option1 Value
   try:
@@ -196,7 +196,26 @@ for index, row in pfa.iterrows():
   if rowlen>1:
     option1val=row["variety"]['data']
 
-
+  #Published
+  if varientstatus==1:
+      Published=["TRUE"]*rowlen
+  if varientstatus==0:
+       Published=["TRUE"]
+       Published=dummyentries(Published,rowlen)
+   
+  #Varient inventory Tracking
+  if varientstatus==1:
+      VIT=["shopify"]*rowlen
+  if varientstatus==0:
+       VIT=["shopify"]
+       Published=dummyentries(Published,rowlen)
+   
+  #Gift Card
+  if varientstatus==1:
+      gift=["FALSE"]*rowlen
+  if varientstatus==0:
+       gift=["FALSE"]
+       Published=dummyentries(Published,rowlen)
 
   print(option1val)
   print(imagevurl)
@@ -226,9 +245,6 @@ dfshopify['Variant Fulfillment Service']='manual'
 dfshopify['Variant Inventory Policy']='deny'
 dfshopify['Variant Inventory Tracker']='shopify'
 dfshopify['Variant Inventory Qty']='50'
-dfshopify['Published']='TRUE'
-dfshopify['Published']='TRUE'
-dfshopify['Published']='TRUE'
 dfshopify['Published']='TRUE'
 
 st.write(dfshopify)
