@@ -160,10 +160,13 @@ if index!=0:
 
                         #Upload new photos 
                         def update_raw_image(links,pid):
+                            conn=psycopg2.connect("postgresql://hkmuctkbhmlhsr:59563300aab6c650f8bbc9cc4153df6a42054b71e9be00dda420f40bbbf791b2@ec2-54-76-43-89.eu-west-1.compute.amazonaws.com:5432/dd8a5bspvhrk8c") 
+                            curr=conn.cursor()
                             sql_select_query = """UPDATE master_product_table SET "Product_image_R_url" = %s WHERE "Product_id" = %s"""
-
                             curr.execute(sql_select_query, (links,pid,))
                             conn.commit()
+                            conn.close
+
 
                         uploaded_files=st.file_uploader("Upload a file", type=["png", "jpg", "jpeg"], accept_multiple_files=True) 
                         images=[]
