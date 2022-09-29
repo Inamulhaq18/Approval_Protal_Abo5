@@ -166,7 +166,7 @@ for index, row in pfa.iterrows():
     option1_val=dummyentries(option1_val,rowlen)
 
   #'Variant Price',price
-  price=[row["Product_price"]]
+  price=row["Product_price"]
   for i in range(1,rowlen):
     price.append(row["Product_price"])
   VariantPrice=price
