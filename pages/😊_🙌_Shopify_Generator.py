@@ -153,9 +153,9 @@ for index, row in pfa.iterrows():
   option1=dummyentries(option1,rowlen)
   #st.write(len(option1))
   if option1[0]!="":
-      varientstatus=0
-  else:
       varientstatus=1
+  else:
+      varientstatus=0
 
   #Option1 Value
   try:
