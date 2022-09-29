@@ -317,7 +317,7 @@ st.header("Yay ! '{}'  Products Ready to be uploaded ".format(dfshopify["Handle"
 st.header("")
 
 
-st.write(dfshopify)
+AgGrid(dfshopify)
 
 def convert_df(df):
    return df.to_csv(index=False).encode('utf-8')
