@@ -272,6 +272,8 @@ for index, row in pfa.iterrows():
        VFS=["manual"]
        VFS=dummyentries(VFS,rowlen)
    #Variant Price
+  price=row["Product_price"]
+
   if varientstatus==1:
       VP=[price]*rowlen
   if varientstatus==0:
