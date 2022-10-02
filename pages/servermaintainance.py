@@ -19,5 +19,6 @@ if password=="inam@hnh":
         st.write("Restarting Database Server..............")
         heroku_conn = heroku3.from_key('4367aebd-de75-480c-be55-9c9b45491092')
         app=heroku_conn.app('abo5productuploaddatabase')
-        app.restart()
+        #app.restart()
+        app.kill()
         st.write("Please Give 3 mins for the system to boot up")
