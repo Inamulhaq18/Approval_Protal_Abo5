@@ -334,7 +334,7 @@ for index, row in pfa.iterrows():
   # for h in handler:
   #   a={'Handle': h}
   #   df1=df1.append(a, ignore_index = True)
-  st.write(len(handler),len(Title),len(Body),len(vendor_),len(CPT),len(tags),len(option1),len(option1_val),len(Published),(price),len(imageposition),len(image_link),len(imagevurl))
+  st.write(len(handler),len(Title),len(Body),len(vendor_),len(CPT),len(tags),len(option1),len(option1_val),len(Published),len(pr_ice),len(imageposition),len(image_link),len(imagevurl))
   dftemp=pd.DataFrame({'Handle':handler,'Title':Title,'Body (HTML)':Body,'Vendor':vendor_,'Custom Product Type':CPT,'Tags':tags,'Option1 Name':option1,'Option1 Value':option1_val,'Published':Published,'Variant Price':VP,'Image Position':imageposition,'Image Src':image_link,'Variant Image':imagevurl,'Variant Inventory Tracker':VIT,'Variant Inventory Qty':VIQ,'Variant Inventory Policy':VIP,'Variant Fulfillment Service':VFS,'Variant Price':VP,"Variant Taxable":VT,"Gift Card":gift,"Status":status__,})
   dfshopify=dfshopify.append(dftemp,ignore_index=True)
   dftemp=pd.DataFrame({'Handle':handler})
