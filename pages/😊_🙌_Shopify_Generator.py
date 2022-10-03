@@ -241,6 +241,8 @@ for index, row in pfa.iterrows():
           st.write(type(totalclean))
           totalclean = list(totalclean)
           totalclean = totalclean.pop("")
+          st.write("============================================")
+          st.write(totalclean)
           varlen=len(totalclean)
     #Publishedd
   if varientstatus==1:
