@@ -189,7 +189,7 @@ if pfa.shape[0] !=0:
                 name=name.replace(":","")
                 name=name.replace(" ","")
                 name=name+"."+"png"
-                s3.Bucket('abo5').upload_file(Filename=img, Key=name)
+                s3.Bucket('abo5').upload_file(Filename=img, Key=name, ExtraArgs={'ContentType': 'image/png'})
                 urllist.append(url+name)
                 links = ", ".join(urllist)
                 links = product_rimage+", "+links
