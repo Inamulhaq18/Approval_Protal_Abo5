@@ -230,11 +230,14 @@ for index, row in pfa.iterrows():
   else:
      option1val=[""]
   option1val=dummyentries(option1val,rowlen)
+
+
   if varientstatus==1:
      varlen=len(row["variety"]["data"])
     #Publishedd
   if varientstatus==1:
       Published=["TRUE"]*varlen
+      Published=dummyentries(Published,rowlen)
   if varientstatus==0:
        Published=["TRUE"]
        Published=dummyentries(Published,rowlen)
@@ -242,6 +245,7 @@ for index, row in pfa.iterrows():
   #Varient inventory Tracking
   if varientstatus==1:
       VIT=["shopify"]*varlen
+      VIT=dummyentries(VIT,rowlen)
   if varientstatus==0:
        VIT=["shopify"]
        VIT=dummyentries(VIT,rowlen)
@@ -249,6 +253,7 @@ for index, row in pfa.iterrows():
  #Gift Card
   if varientstatus==1:
       gift=["FALSE"]*varlen
+      gift=dummyentries(gift,rowlen)
   if varientstatus==0:
        gift=["FALSE"]
        gift=dummyentries(gift,rowlen)
@@ -256,6 +261,7 @@ for index, row in pfa.iterrows():
 #Variant Inventory Qty
   if varientstatus==1:
       VIQ=["50"]*varlen
+      VIQ=dummyentries(VIQ,rowlen)
   if varientstatus==0:
        VIQ=["50"]
        VIQ=dummyentries(VIQ,rowlen)
@@ -263,12 +269,14 @@ for index, row in pfa.iterrows():
  #Variant Inventory Policy
   if varientstatus==1:
       VIP=["deny"]*varlen
+      VIP=dummyentries(VIP,rowlen)
   if varientstatus==0:
        VIP=["deny"]
        VIP=dummyentries(VIP,rowlen)
   #Variant Fulfillment Service
   if varientstatus==1:
       VFS=["manual"]*varlen
+      VFS=dummyentries(VFS,rowlen)
   if varientstatus==0:
        VFS=["manual"]
        VFS=dummyentries(VFS,rowlen)
@@ -277,6 +285,7 @@ for index, row in pfa.iterrows():
 
   if varientstatus==1:
       VP=[price]*varlen
+      VP=dummyentries(VP,rowlen)
   if varientstatus==0:
        VP=[price]
        VP=dummyentries(VP,rowlen)
@@ -286,12 +295,14 @@ for index, row in pfa.iterrows():
 
   if varientstatus==1:
       pr_ice=[price]*varlen
+      pr_ice=dummyentries(pr_ice,rowlen)
   if varientstatus==0:
        pr_ice=[price]
        pr_ice=dummyentries(pr_ice,rowlen)
 #Variant Taxable
   if varientstatus==1:
       VT=["True"]*varlen
+      VT=dummyentries(VT,rowlen)
   if varientstatus==0:
        VT=[""]
        VT=dummyentries(VT,rowlen)
@@ -299,6 +310,7 @@ for index, row in pfa.iterrows():
 #Status
   if varientstatus==1:
       status__=["Active"]*varlen
+      status__=dummyentries(status__,rowlen)
   if varientstatus==0:
        status__=["Active"]
        status__=dummyentries(status__,rowlen)
