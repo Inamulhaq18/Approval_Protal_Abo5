@@ -240,7 +240,7 @@ for index, row in pfa.iterrows():
           st.write("Type: ")
           st.write(type(totalclean))
           st.write(totalclean)
-          totalclean = totalclean.remove("")
+          totalclean.remove("")
           st.write("============================================")
           st.write(totalclean)
           varlen=len(totalclean)
