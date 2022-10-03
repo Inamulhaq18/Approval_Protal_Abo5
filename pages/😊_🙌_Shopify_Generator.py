@@ -239,8 +239,8 @@ for index, row in pfa.iterrows():
           totalclean=row["variety"]["data"]
           st.write("Type: ")
           st.write(type(totalclean))
-          totalclean = list(totalclean)
-          totalclean = totalclean.pop("")
+          st.write(totalclean)
+          totalclean = totalclean.remove("")
           st.write("============================================")
           st.write(totalclean)
           varlen=len(totalclean)
