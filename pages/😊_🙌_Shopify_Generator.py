@@ -232,7 +232,7 @@ for index, row in pfa.iterrows():
   option1val=dummyentries(option1val,rowlen)
   if varientstatus==1:
      varlen=len(row["variety"]["data"])
-    #Published
+    #Publishedd
   if varientstatus==1:
       Published=["TRUE"]*varlen
   if varientstatus==0:
