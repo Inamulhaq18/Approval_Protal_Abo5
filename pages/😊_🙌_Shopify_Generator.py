@@ -160,6 +160,7 @@ for index, row in pfa.iterrows():
   #Option1 Value
   try:
     option1_val=(row["variety"]["data"])
+    varlen=len(option1_val)
     option1_val=dummyentries(option1_val,rowlen)
   except KeyError as error:
     option1_val=[""]
@@ -232,18 +233,18 @@ for index, row in pfa.iterrows():
   option1val=dummyentries(option1val,rowlen)
 
 
-  if varientstatus==1:
-     varlen=len(row["variety"]["data"])
-     if "" in row["variety"]["data"]:
-          st.write("__+++____+++____+++____+++____+++____+++__")
-          totalclean=row["variety"]["data"]
-          st.write("Type: ")
-          st.write(type(totalclean))
-          st.write(totalclean)
-          totalclean.remove("")
-          st.write("============================================")
-          st.write(totalclean)
-          varlen=len(totalclean)
+#   if varientstatus==1:
+#      varlen=len(row["variety"]["data"])
+#      if "" in row["variety"]["data"]:
+#           st.write("__+++____+++____+++____+++____+++____+++__")
+#           totalclean=row["variety"]["data"]
+#           st.write("Type: ")
+#           st.write(type(totalclean))
+#           st.write(totalclean)
+#           totalclean.remove("")
+#           st.write("============================================")
+#           st.write(totalclean)
+ 
     #Publishedd
   if varientstatus==1:
       st.write(Title)
