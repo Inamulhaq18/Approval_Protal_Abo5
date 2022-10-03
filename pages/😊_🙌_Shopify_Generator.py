@@ -235,11 +235,11 @@ for index, row in pfa.iterrows():
   if varientstatus==1:
      varlen=len(row["variety"]["data"])
      if "" in row["variety"]["data"]:
-          st.write("__+++__")
+          st.write("__+++____+++____+++____+++____+++____+++__")
           totalclean=row["variety"]["data"]
           st.write(totalclean)
-          totalclean=totalclean.remove("")
           totalclean=list(totalclean)
+          totalclean=totalclean.remove("")
           varlen=len(totalclean)
     #Publishedd
   if varientstatus==1:
