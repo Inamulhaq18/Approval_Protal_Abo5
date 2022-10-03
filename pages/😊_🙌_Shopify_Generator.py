@@ -241,6 +241,7 @@ for index, row in pfa.iterrows():
           st.write(varlen)
           st.write(row["variety"]["data"])
           st.write("((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))")
+      st.write("((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))")
       Published=["TRUE"]*varlen
       Published=dummyentries(Published,rowlen)
   if varientstatus==0:
