@@ -236,6 +236,11 @@ for index, row in pfa.iterrows():
      varlen=len(row["variety"]["data"])
     #Publishedd
   if varientstatus==1:
+      if Title=="petrova Smoothing Gel":
+          print("((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))")
+          print(varlen)
+          print(row["variety"]["data"])
+          print("((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))")
       Published=["TRUE"]*varlen
       Published=dummyentries(Published,rowlen)
   if varientstatus==0:
