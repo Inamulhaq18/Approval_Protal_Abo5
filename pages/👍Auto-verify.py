@@ -177,8 +177,8 @@ if pfa.shape[0] !=0:
                     #st.write(name)
                     #upload R to s3
 
-                 s3.Bucket('abo5').upload_file(Filename=img, Key=name, ExtraArgs={'ContentType': 'image/png'})
-                 urllist.append(url+name)
+                    s3.Bucket('abo5').upload_file(Filename=img, Key=name, ExtraArgs={'ContentType': 'image/png'})
+                    urllist.append(url+name)
                  links = ", ".join(urllist)
                  links = product_rimage+", "+links
                  update_raw_image(links,product_id)        
