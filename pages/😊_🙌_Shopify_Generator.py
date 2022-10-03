@@ -230,44 +230,45 @@ for index, row in pfa.iterrows():
   else:
      option1val=[""]
   option1val=dummyentries(option1val,rowlen)
-  
+  if varientstatus==1:
+     varlen=len(row["variety"]["data"])
     #Published
   if varientstatus==1:
-      Published=["TRUE"]*rowlen
+      Published=["TRUE"]*varlen
   if varientstatus==0:
        Published=["TRUE"]
        Published=dummyentries(Published,rowlen)
    
   #Varient inventory Tracking
   if varientstatus==1:
-      VIT=["shopify"]*rowlen
+      VIT=["shopify"]*varlen
   if varientstatus==0:
        VIT=["shopify"]
        VIT=dummyentries(VIT,rowlen)
    
  #Gift Card
   if varientstatus==1:
-      gift=["FALSE"]*rowlen
+      gift=["FALSE"]*varlen
   if varientstatus==0:
        gift=["FALSE"]
        gift=dummyentries(gift,rowlen)
   
 #Variant Inventory Qty
   if varientstatus==1:
-      VIQ=["50"]*rowlen
+      VIQ=["50"]*varlen
   if varientstatus==0:
        VIQ=["50"]
        VIQ=dummyentries(VIQ,rowlen)
 
  #Variant Inventory Policy
   if varientstatus==1:
-      VIP=["deny"]*rowlen
+      VIP=["deny"]*varlen
   if varientstatus==0:
        VIP=["deny"]
        VIP=dummyentries(VIP,rowlen)
   #Variant Fulfillment Service
   if varientstatus==1:
-      VFS=["manual"]*rowlen
+      VFS=["manual"]*varlen
   if varientstatus==0:
        VFS=["manual"]
        VFS=dummyentries(VFS,rowlen)
@@ -275,7 +276,7 @@ for index, row in pfa.iterrows():
   price=row["Product_price"]
 
   if varientstatus==1:
-      VP=[price]*rowlen
+      VP=[price]*varlen
   if varientstatus==0:
        VP=[price]
        VP=dummyentries(VP,rowlen)
@@ -284,20 +285,20 @@ for index, row in pfa.iterrows():
   price=row["Product_price"]
 
   if varientstatus==1:
-      pr_ice=[price]*rowlen
+      pr_ice=[price]*varlen
   if varientstatus==0:
        pr_ice=[price]
        pr_ice=dummyentries(pr_ice,rowlen)
 #Variant Taxable
   if varientstatus==1:
-      VT=["True"]*rowlen
+      VT=["True"]*varlen
   if varientstatus==0:
        VT=[""]
        VT=dummyentries(VT,rowlen)
  
 #Status
   if varientstatus==1:
-      status__=["Active"]*rowlen
+      status__=["Active"]*varlen
   if varientstatus==0:
        status__=["Active"]
        status__=dummyentries(status__,rowlen)
