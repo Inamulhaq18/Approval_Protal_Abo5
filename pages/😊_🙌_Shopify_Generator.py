@@ -237,6 +237,8 @@ for index, row in pfa.iterrows():
      if "" in row["variety"]["data"]:
           totalclean=row["variety"]["data"]
           totalclean=totalclean.remove("")
+          st.write(totalclean)
+          totalclean=list(totalclean)
           varlen=len(totalclean)
     #Publishedd
   if varientstatus==1:
