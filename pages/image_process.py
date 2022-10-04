@@ -28,7 +28,7 @@ dat = pd.read_sql_query(sql,conn)
 pfa=dat
 conn.close()
 pfa=pfa[pfa["Product_id"]>650]
-pfa=pfa[pfa["Product_approval_status"]==1]
+#pfa=pfa[pfa["Product_approval_status"]==1]
 #pfa=pfa[pfa["shopify_status"]==1]
 pfa=pfa.sort_values(by="Product_id")
 pfa=pfa.drop_duplicates(subset='Product_Name_en', keep="last")
