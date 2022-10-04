@@ -36,8 +36,8 @@ pfa=pfa.drop_duplicates(subset='Product_Name_en', keep="last")
 number_of_items=(pfa[pfa["Product_live_status"]==1]).shape[1]
 
 pfa.dropna(subset=["Product_Name_en"])
-pfa=pfa[pfa['Product_Name_en']!=""]
-pfa=pfa[pfa['Product_image_P_url']!=""]
+#pfa=pfa[pfa['Product_Name_en']!=""]
+#pfa=pfa[pfa['Product_image_P_url']!=""]
 
 shopifycolumnss=pd.DataFrame(columns=shopifycolumns)
 list(shopifycolumnss.columns)
