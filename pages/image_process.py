@@ -45,4 +45,9 @@ shopifycolumnss=pd.DataFrame(columns=shopifycolumns)
 list(shopifycolumnss.columns)
 
 pfa=pfa.dropna(subset=['variety'])
-AgGrid(pfa)
+#AgGrid(pfa)
+st.write(pfa.shape[0])
+st.write("Products to be processed !")
+for index, row in pfa.iterrows():
+  parameter=row['Product_image_R_url']
+  st.write(parameter)
