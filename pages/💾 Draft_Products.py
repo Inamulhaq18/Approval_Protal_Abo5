@@ -172,7 +172,7 @@ if pfa.shape[0] !=0:
                     #st.write(name)
                     #upload R to s3
 
-                    s3.Bucket('abo5').upload_file(Filename=name, Key=name)
+                    s3.Bucket('abo5').upload_file(Filename=name, Key=name, ExtraArgs={'ContentType': 'image/png'})
                     urllist.append(url+name)
                  links = ", ".join(urllist)
                  links = product_rimage+", "+links
@@ -184,7 +184,7 @@ if pfa.shape[0] !=0:
                 name=name.replace(":","")
                 name=name.replace(" ","")
                 name=name+"."+"png"
-                s3.Bucket('abo5').upload_file(Filename=img, Key=name)
+                s3.Bucket('abo5').upload_file(Filename=img, Key=name,ExtraArgs={'ContentType': 'image/png'})
                 urllist.append(url+name)
                 links = ", ".join(urllist)
                 links = product_rimage+", "+links
