@@ -59,7 +59,9 @@ list(shopifycolumnss.columns)
 pfa=pfa.dropna(subset=['variety'])
 #AgGrid(pfa)
 noimage=(pfa.shape[0])
-st.Title("Products to be processed - ",noimage)
+st.Title("Products to be processed - ")
+st.Title(noimage)
+
 if st.button("Process Images"):
     
     for index, row in pfa.iterrows():
