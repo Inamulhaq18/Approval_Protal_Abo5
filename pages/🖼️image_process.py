@@ -63,11 +63,12 @@ st.title("Products to be processed - ")
 st.title(noimage)
 
 if st.button("Process Images"):
-    
+    aa=1
     for index, row in pfa.iterrows():
       parameter=row['Product_image_R_url']
-      st.write(pfa.shape[0]-1,"/",pfa.shape[0])
+      st.write(aa,"/",pfa.shape[0])
       a=imageprocessapi(parameter)
       st.write(a)
+      aa=aa+1
       time.sleep(15)
   
