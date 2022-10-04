@@ -43,4 +43,4 @@ shopifycolumnss=pd.DataFrame(columns=shopifycolumns)
 list(shopifycolumnss.columns)
 
 pfa=pfa.dropna(subset=['variety'])
-afgrid(pfa)
+AgGrid(pfa)
