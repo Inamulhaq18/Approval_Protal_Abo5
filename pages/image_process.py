@@ -8,7 +8,7 @@ import pandas as pd
 import streamlit as st 
 import psycopg2
 from st_aggrid import AgGrid
-
+import time
 
 engine = create_engine("postgresql://hkmuctkbhmlhsr:59563300aab6c650f8bbc9cc4153df6a42054b71e9be00dda420f40bbbf791b2@ec2-54-76-43-89.eu-west-1.compute.amazonaws.com:5432/dd8a5bspvhrk8c", echo = False)
 
@@ -22,6 +22,16 @@ shopify=pd.read_csv("shopifytemp.csv")
 shopifycolumns=list(shopify.columns)
 conn=psycopg2.connect("postgresql://hkmuctkbhmlhsr:59563300aab6c650f8bbc9cc4153df6a42054b71e9be00dda420f40bbbf791b2@ec2-54-76-43-89.eu-west-1.compute.amazonaws.com:5432/dd8a5bspvhrk8c") 
 curr=conn.cursor()
+
+def imageprocessapi(links):
+    session = requests.Session()
+    session.trust_env = False
+    links=links
+    url="https://abo5imageapi.herokuapp.com/processBG?rurl="
+    url=url+links
+    response = session.get(url)
+    return(response.content)
+
 # Loading approved data from database
 sql = "SELECT * FROM master_product_table"
 dat = pd.read_sql_query(sql,conn)
@@ -50,4 +60,8 @@ st.write(pfa.shape[0])
 st.write("Products to be processed !")
 for index, row in pfa.iterrows():
   parameter=row['Product_image_R_url']
-  st.write(parameter)
+  st.write(pfa.shape[0]-1,"/",pfa.shape[0])
+  a=imageprocessapi(parameter)
+  st.write(a)
+  time.sleep(15)
+  
