@@ -10,6 +10,8 @@ import psycopg2
 from st_aggrid import AgGrid
 import time
 import requests
+import heroku3
+
 
 
 engine = create_engine("postgresql://hkmuctkbhmlhsr:59563300aab6c650f8bbc9cc4153df6a42054b71e9be00dda420f40bbbf791b2@ec2-54-76-43-89.eu-west-1.compute.amazonaws.com:5432/dd8a5bspvhrk8c", echo = False)
@@ -69,8 +71,13 @@ if st.button("Process Images"):
       st.write(aa,"/",pfa.shape[0])
       a=imageprocessapi(parameter)
       if "iframe" in str(a):
-        st.write("crash")
+        st.write("crashed -- Server restarting waiting 2 mins")
+        time.sleep(1)
+        heroku_conn = heroku3.from_key('4367aebd-de75-480c-be55-9c9b45491092')
+        app=heroku_conn.app('abo5imageapi')
+        app.restart()
+        time.sleep(60)
       st.write(a)
       aa=aa+1
-      time.sleep(1)
+      time.sleep(15)
   
