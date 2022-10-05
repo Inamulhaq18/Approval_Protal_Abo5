@@ -68,7 +68,7 @@ if st.button("Process Images"):
       parameter=row['Product_image_R_url']
       st.write(aa,"/",pfa.shape[0])
       a=imageprocessapi(parameter)
-      if "iframe" in a:
+      if "iframe" in str(a):
         st.write("crash")
       st.write(a)
       aa=aa+1
