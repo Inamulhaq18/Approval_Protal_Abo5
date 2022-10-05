@@ -76,8 +76,8 @@ if st.button("Process Images"):
         heroku_conn = heroku3.from_key('4367aebd-de75-480c-be55-9c9b45491092')
         app=heroku_conn.app('abo5imageapi')
         app.restart()
-        time.sleep(60)
+        time.sleep(89)
       st.write(a)
       aa=aa+1
-      time.sleep(15)
+      time.sleep(20)
   
