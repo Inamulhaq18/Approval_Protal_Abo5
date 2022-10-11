@@ -118,7 +118,6 @@ if pfa.shape[0] !=0:
 
         else:
             st.error("No images uploaded,  skipping")
-            skip(product_id)
             if st.button("Skip"):
                     sql_select_queryskip = """UPDATE master_product_table SET "Product_approval_status"= %s WHERE "Product_id" = %s"""
                     status=str("8")
