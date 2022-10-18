@@ -19,4 +19,4 @@ opimg=str(r.json()["data"][0]).replace("data:image/png;base64,","")
 
 im = Image.open(BytesIO(base64.b64decode(opimg)))
 st.image(im)
-'''
+
