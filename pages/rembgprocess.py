@@ -14,7 +14,7 @@ encoded_string=str(encoded_string).replace("b'","")
 r = requests.post(url='https://hf.space/embed/eugenesiow/remove-bg/+/api/predict/', json={"data": ["data:image/jpeg;base64,"+encoded_string]})
 
 
-st.write(r.json()["data"])
+st.write(r.json()["data"][0])
 '''
 f = open('C:\\Users\\pc\\Desktop\\base64.txt','r')
 data = f.read()
