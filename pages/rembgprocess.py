@@ -15,9 +15,8 @@ r = requests.post(url='https://hf.space/embed/eugenesiow/remove-bg/+/api/predict
 
 
 st.write(r.json()["data"][0])
-'''
-f = open('C:\\Users\\pc\\Desktop\\base64.txt','r')
-data = f.read()
-im = Image.open(BytesIO(base64.b64decode(data)))
-im.save('C:\\Users\\pc\\Desktop\\image.png', 'PNG')
+opimg=str(r.json()["data"][0]).replace("data:image/png;base64,","")
+
+im = Image.open(BytesIO(base64.b64decode(opimg)))
+st.image(im)
 '''
