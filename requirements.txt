@@ -1,5 +1,5 @@
 heroku3
-rembg==2.0.20
+rembg
 streamlit
 requests==2.27.1
 s3fs==0.4.2
