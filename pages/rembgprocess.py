@@ -14,12 +14,14 @@ def get_as_base64(url):
 def rembgapi(urls):
     imgs=get_as_base64(urls)
     imgs=str(imgs).replace("b'","")
+    st.write(imgs)
+    '''
     r = requests.post(url='https://hf.space/embed/eugenesiow/remove-bg/+/api/predict/', json={"data": ["data:image/jpeg;base64,"+imgs]})
     st.write(r.json())
     opimg=str(r.json()["data"][0]).replace("data:image/png;base64,","")
     im = Image.open(BytesIO(base64.b64decode(opimg)))
     st.image(im)
-    
+    '''
     
 links=st.text_input("Link")
 encoded_string=rembgapi(links)
