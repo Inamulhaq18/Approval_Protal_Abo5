@@ -14,7 +14,6 @@ encoded_string=str(encoded_string).replace("b'","")
 r = requests.post(url='https://hf.space/embed/eugenesiow/remove-bg/+/api/predict/', json={"data": ["data:image/jpeg;base64,"+encoded_string]})
 
 
-st.write(r.json()["data"][0])
 opimg=str(r.json()["data"][0]).replace("data:image/png;base64,","")
 
 im = Image.open(BytesIO(base64.b64decode(opimg)))
