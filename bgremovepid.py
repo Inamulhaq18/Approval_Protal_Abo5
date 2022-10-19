@@ -1,4 +1,4 @@
-from rembg import remove
+from backgroundremove import removebgapi
 import json
 from PIL import Image
 import requests
@@ -86,9 +86,7 @@ def bgremove(urls):
     print(urls)
     Purl=[]
     for url in urls:
-        response = requests.get(url)
-        img=Image.open(BytesIO(response.content))
-        img=remove(img) 
+        img=removebgapi(url)
         img=addwhitebg(img)
         img=img.rotate(-90)
         link=pushtos3(img)
