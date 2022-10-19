@@ -11,7 +11,7 @@ def resizeimage(img):
     fixed_height = 1000
     height_percent = (fixed_height / float(img.size[1]))
     width_size = int((float(img.size[0]) * float(height_percent)))
-    image = img.resize((width_size, fixed_height), PIL.Image.NEAREST)
+    image = img.resize((width_size, fixed_height), Image.NEAREST)
     return(image)
 
 
