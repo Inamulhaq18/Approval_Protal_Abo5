@@ -67,6 +67,7 @@ st.title(noimage)
 
 if st.button("Process Images"):
     remaining=pfa.shape[0]
+    st.write(remaining)
     for index, row in pfa.iterrows():
       parameter=row['Product_image_R_url']
       a=bgprocess(parameter)
