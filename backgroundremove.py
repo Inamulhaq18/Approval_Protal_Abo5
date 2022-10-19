@@ -8,7 +8,8 @@ import requests
 import streamlit as st 
 
 def resizeimage(img):
-    #img=img.thumbnail((500,500))
+    st.write(img.size)
+    img=img.thumbnail((500,500))
     st.image(img)
     return(img)
 
