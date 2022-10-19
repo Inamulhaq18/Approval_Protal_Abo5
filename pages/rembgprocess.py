@@ -14,10 +14,6 @@ def resizeimage(img):
     image = img.resize((width_size, fixed_height), Image.NEAREST)
     return(image)
 
-
-
-
-
 def removebgapi(links):
     a=base64.b64encode(requests.get(links).content)
     st.write("Converstion to B64 done!")
