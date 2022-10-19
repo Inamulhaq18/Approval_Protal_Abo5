@@ -25,7 +25,7 @@ def removebgapi(links):
     img.thumbnail((500, 500))
     st.write(img.size)
     #new_img = resizeimage(img)
-    new_img.save(buffer, format="PNG")
+    img.save(buffer, format="PNG")
     img_b64 = base64.b64encode(buffer.getvalue())
     imgs=img_b64
     imgs=str(imgs).replace("b'","")
