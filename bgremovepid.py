@@ -96,6 +96,7 @@ def bgremove(urls):
         #add white BG
 
 def bgprocess(rurl):
+    st.write(rurl)
     print("rurl  :")
     print(rurl)
     print("_________rurl__________")
@@ -104,6 +105,7 @@ def bgprocess(rurl):
     print("_________Rurl__________")
     print(Rurls)
     urls=Rurls.split(", ")
+    st.write(type(urls))
     Purl=bgremove(urls)
     print("_________PURL_________")
     print(Purl)
