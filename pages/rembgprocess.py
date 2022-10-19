@@ -7,17 +7,37 @@ from io import BytesIO
 import base64
 import requests
 
+def resizeimage(img):
+    fixed_height = 1000
+    height_percent = (fixed_height / float(img.size[1]))
+    width_size = int((float(img.size[0]) * float(height_percent)))
+    image = image.resize((width_size, fixed_height), PIL.Image.NEAREST)
+    return(image)
+
+
 links=st.text_input("Link")
+
+
 
 
 a=base64.b64encode(requests.get(links).content)
 st.write("Converstion to B64 done!")
 imgs=str(a).replace("b'","")
+base64_str = imgs
+buffer = io.BytesIO()
+imgdata = base64.b64decode(base64_str)
+img = Image.open(io.BytesIO(imgdata))
+new_img = resizeimage(img)
+new_img.save(buffer, format="PNG")
+img_b64 = base64.b64encode(buffer.getvalue())
+imgs=img_b64
 r = requests.post(url='https://hf.space/embed/eugenesiow/remove-bg/+/api/predict/', json={"data": ["data:image/jpeg;base64,"+imgs]})
 st.write(r.json())
 opimg=str(r.json()["data"][0]).replace("data:image/png;base64,","")
 im = Image.open(BytesIO(base64.b64decode(opimg)))
 st.image(im)
+
+
 
 '''def get_as_base64(url):
     return base64.b64encode(requests.get(url).content)
