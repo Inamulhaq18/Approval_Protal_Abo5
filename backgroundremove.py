@@ -5,6 +5,7 @@ from PIL import Image
 from io import BytesIO
 import base64
 import requests
+import streamlit as st 
 
 def resizeimage(img):
     img=img.thumbnail((500,500))
