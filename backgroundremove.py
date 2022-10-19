@@ -9,7 +9,7 @@ import streamlit as st
 
 def resizeimage(img):
     img=img.thumbnail((500,500))
-    st.write("hello")
+    st.image(img)
     return(img)
 
 def removebgapi(links):
