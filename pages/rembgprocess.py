@@ -32,7 +32,7 @@ new_img.save(buffer, format="PNG")
 img_b64 = base64.b64encode(buffer.getvalue())
 imgs=img_b64
 imgs=str(imgs).replace("b'","")
-payloaddata={"data": ["data:image/jpeg;base64,"+imgs,10,"alpha matting"]}
+payloaddata={"data": ["data:image/jpeg;base64,"+imgs,10,"alpha matting"],"fn_index":0}
 st.write(payloaddata)
 r = requests.post(url='https://hf.space/embed/eugenesiow/remove-bg/+/api/predict/', json=payloaddata)
 st.write(r.json())
