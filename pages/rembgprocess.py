@@ -24,7 +24,7 @@ a=base64.b64encode(requests.get(links).content)
 st.write("Converstion to B64 done!")
 imgs=str(a).replace("b'","")
 base64_str = imgs
-buffer = io.BytesIO()
+buffer = BytesIO()
 imgdata = base64.b64decode(base64_str)
 img = Image.open(io.BytesIO(imgdata))
 new_img = resizeimage(img)
