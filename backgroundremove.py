@@ -7,9 +7,6 @@ import base64
 import requests
 
 def resizeimage(img):
-  if img.size[1]<img.size[0]:
-    fixed_height = 500
-  else:
     fixed_height = img.size[0]
     height_percent = (fixed_height / float(img.size[1]))
     width_size = int((float(img.size[0]) * float(height_percent)))
