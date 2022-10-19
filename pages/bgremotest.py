@@ -30,6 +30,8 @@ def removebgapi(links):
     #https://hf.space/embed/eugenesiow/remove-bg/+/api/predict/
 
     r = requests.post(url='https://hf.space/embed/KenjieDec/RemBG/+/api/predict', json=payloaddata)
+    st.write(r.json())
+    st.write(type(r.json()))
     rdata=r.json()["data"][0]
     st.write(rdata)
     st.write(type(rdata))
