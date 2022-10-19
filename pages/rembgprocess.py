@@ -32,24 +32,10 @@ new_img.save(buffer, format="PNG")
 img_b64 = base64.b64encode(buffer.getvalue())
 imgs=img_b64
 imgs=str(imgs).replace("b'","")
-r = requests.post(url='https://hf.space/embed/eugenesiow/remove-bg/+/api/predict/', json={"data": ["data:image/jpeg;base64,"+imgs,10,"alpha matting"]})
+payloaddata={"data": ["data:image/jpeg;base64,"+imgs,10,"alpha matting"]}
+r = requests.post(url='https://hf.space/embed/eugenesiow/remove-bg/+/api/predict/', json=payloaddata)
 st.write(r.json())
 opimg=str(r.json()["data"][0]).replace("data:image/png;base64,","")
 im = Image.open(BytesIO(base64.b64decode(opimg)))
 st.image(im)
 
-
-
-'''def get_as_base64(url):
-    return base64.b64encode(requests.get(url).content)
-
-def rembgapi(urls):
-    imgs=get_as_base64(urls)
-    imgs=str(imgs).replace("b'","")
-    st.write(imgs)
-    
-
-    
-    st.image(im)
-    '''
-    
