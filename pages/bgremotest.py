@@ -8,7 +8,7 @@ import requests
 import streamlit as st 
 
 def resizeimage(img):
-    fixed_height = 1000
+    fixed_height = 500
     height_percent = (fixed_height / float(img.size[1]))
     width_size = int((float(img.size[0]) * float(height_percent)))
     image = img.resize((width_size, fixed_height), Image.NEAREST)
