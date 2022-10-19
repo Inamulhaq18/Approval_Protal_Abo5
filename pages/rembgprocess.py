@@ -15,30 +15,35 @@ def resizeimage(img):
     return(image)
 
 
+
+
+
+def removebgapi(links):
+    a=base64.b64encode(requests.get(links).content)
+    st.write("Converstion to B64 done!")
+    imgs=str(a).replace("b'","")
+    base64_str = imgs
+    buffer = BytesIO()
+    imgdata = base64.b64decode(base64_str)
+    img = Image.open(BytesIO(imgdata))
+    new_img = resizeimage(img)
+    new_img.save(buffer, format="PNG")
+    img_b64 = base64.b64encode(buffer.getvalue())
+    imgs=img_b64
+    imgs=str(imgs).replace("b'","")
+    payloaddata={"data": ["data:image/jpeg;base64,"+imgs,10,"alpha matting"]}
+    st.write(payloaddata)
+    #https://hf.space/embed/eugenesiow/remove-bg/+/api/predict/
+
+    r = requests.post(url='https://hf.space/embed/KenjieDec/RemBG/+/api/predict', json=payloaddata)
+    st.write(r.json())
+    opimg=str(r.json()["data"][0]).replace("data:image/png;base64,","")
+    im = Image.open(BytesIO(base64.b64decode(opimg)))
+    return(im)
+
 links=st.text_input("Link")
-
-
-
-
-a=base64.b64encode(requests.get(links).content)
-st.write("Converstion to B64 done!")
-imgs=str(a).replace("b'","")
-base64_str = imgs
-buffer = BytesIO()
-imgdata = base64.b64decode(base64_str)
-img = Image.open(BytesIO(imgdata))
-new_img = resizeimage(img)
-new_img.save(buffer, format="PNG")
-img_b64 = base64.b64encode(buffer.getvalue())
-imgs=img_b64
-imgs=str(imgs).replace("b'","")
-payloaddata={"data": ["data:image/jpeg;base64,"+imgs,10,"alpha matting"]}
-st.write(payloaddata)
-#https://hf.space/embed/eugenesiow/remove-bg/+/api/predict/
-
-r = requests.post(url='https://hf.space/embed/KenjieDec/RemBG/+/api/predict', json=payloaddata)
-st.write(r.json())
-opimg=str(r.json()["data"][0]).replace("data:image/png;base64,","")
-im = Image.open(BytesIO(base64.b64decode(opimg)))
-st.image(im)
+if links!="":
+    img=removebgapi(links)
+    st.image(img)
+    
 
