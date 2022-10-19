@@ -31,6 +31,7 @@ new_img = resizeimage(img)
 new_img.save(buffer, format="PNG")
 img_b64 = base64.b64encode(buffer.getvalue())
 imgs=img_b64
+imgs=str(imgs).replace("b'","")
 r = requests.post(url='https://hf.space/embed/eugenesiow/remove-bg/+/api/predict/', json={"data": ["data:image/jpeg;base64,"+imgs]})
 st.write(r.json())
 opimg=str(r.json()["data"][0]).replace("data:image/png;base64,","")
