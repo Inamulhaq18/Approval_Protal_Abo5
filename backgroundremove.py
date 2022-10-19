@@ -8,7 +8,7 @@ import requests
 
 def resizeimage(img):
     image=img.thumbnail((500,500))
-    st.write(image.size)
+    st.write(image.size())
     return(image)
 
 def removebgapi(links):
