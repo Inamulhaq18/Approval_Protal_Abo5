@@ -9,6 +9,7 @@ import streamlit as st
 
 def resizeimage(img):
     st.write(img.size)
+    st.write(type(img))
     img=img.thumbnail((500,500), Image.ANTIALIAS)
     st.image(img)
     return(img)
