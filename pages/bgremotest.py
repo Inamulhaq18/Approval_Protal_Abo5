@@ -31,6 +31,11 @@ def removebgapi(links):
 
     r = requests.post(url='https://hf.space/embed/KenjieDec/RemBG/+/api/predict', json=payloaddata)
     st.write(r)
+    st.write(type(r))
+    if r=="<Response [200]>":
+        st.write("yay")
+
+
     st.write(type(r.json()))
     rdata=r.json()["data"][0]
     st.write(rdata)
