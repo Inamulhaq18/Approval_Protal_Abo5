@@ -7,7 +7,7 @@ import base64
 import requests
 
 def resizeimage(img):
-    image=img
+    image=img.thumbnail((500,500))
     return(image)
 
 def removebgapi(links):
