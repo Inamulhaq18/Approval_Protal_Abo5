@@ -71,9 +71,15 @@ if st.button("Process Images"):
     for index, row in pfa.iterrows():
       parameter=row['Product_image_R_url']
       st.write(type(parameter))
-      a=bgprocess(parameter)
+      try:
+        a=bgprocess(parameter)
+      except:
+        st.write("An exception occurred")
       remaining=remaining-1
       st.write(remaining)
+  
+
+  
       
 
   
