@@ -34,7 +34,8 @@ imgs=img_b64
 imgs=str(imgs).replace("b'","")
 payloaddata={"data": ["data:image/jpeg;base64,"+imgs,10,"alpha matting"],"fn_index":0}
 st.write(payloaddata)
-r = requests.post(url='https://hf.space/embed/eugenesiow/remove-bg/+/api/predict/', json=payloaddata)
+#https://hf.space/embed/eugenesiow/remove-bg/+/api/predict/
+r = requests.post(url='https://hf.space/embed/KenjieDec/RemBG/api/queue/push/', json=payloaddata)
 st.write(r.json())
 opimg=str(r.json()["data"][0]).replace("data:image/png;base64,","")
 im = Image.open(BytesIO(base64.b64decode(opimg)))
