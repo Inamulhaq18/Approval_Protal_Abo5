@@ -70,7 +70,7 @@ if st.button("Process Images"):
     st.write(remaining)
     for index, row in pfa.iterrows():
       parameter=row['Product_image_R_url']
-      st.write(parameter)
+      st.write(type(parameter))
       a=bgprocess(parameter)
       remaining=remaining-1
       st.write(remaining)
