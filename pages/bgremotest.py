@@ -34,5 +34,5 @@ def removebgapi(links):
     im = Image.open(BytesIO(base64.b64decode(opimg)))
     return(im)
   
-link=st.text_input()
+link=st.text_input("enter link")
 removebgapi(link)
