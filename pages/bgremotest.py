@@ -30,7 +30,9 @@ def removebgapi(links):
     #https://hf.space/embed/eugenesiow/remove-bg/+/api/predict/
 
     r = requests.post(url='https://hf.space/embed/KenjieDec/RemBG/+/api/predict', json=payloaddata)
-    st.write(r.json()["data"][0].replace("data:image/png;base64,",""))
+    rdata=r.json()["data"][0]
+    st.write(rdata)
+    st.write(type(rdata))
     opimg=str(r.json()["data"][0]).replace("data:image/png;base64,","")
     
     im = Image.open(BytesIO(base64.b64decode(opimg)))
