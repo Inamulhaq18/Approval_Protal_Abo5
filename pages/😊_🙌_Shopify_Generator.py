@@ -20,7 +20,7 @@ Base=declarative_base()
 
 shopify=pd.read_csv("shopifytemp.csv")
 shopifycolumns=list(shopify.columns)
-conn=psycopg2.connect("postgresql://hkmuctkbhmlhsr:59563300aab6c650f8bbc9cc4153df6a42054b71e9be00dda420f40bbbf791b2@ec2-54-76-43-89.eu-west-1.compute.amazonaws.com:5432/dd8a5bspvhrk8c") 
+conn=psycopg2.connect("postgres://ue0bragorjpsfg:p3401de69df0671d626efa0688fbb4b255afe17a00d95341e8504b5442c3516f3@ec2-52-18-7-194.eu-west-1.compute.amazonaws.com:5432/d1en285kafvdds") 
 curr=conn.cursor()
 # Loading approved data from database
 sql = "SELECT * FROM master_product_table"
