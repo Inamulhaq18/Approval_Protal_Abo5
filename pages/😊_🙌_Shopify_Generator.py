@@ -205,7 +205,10 @@ for index, row in pfa.iterrows():
            if (option+"_img") in row["variety"]:
             dataa=row["variety"][option+"_img"]
             #urlsdata=[]
-            urlsdataa=geturlfor(dataa[0],row)#this needs to return url for a 1,2,3,R1
+            try:
+               urlsdataa=geturlfor(dataa[0],row)#this needs to return url for a 1,2,3,R1
+            except:
+               st.write(dataa)
             urlsdata.append(urlsdataa)
 
           imagevurl=urlsdata
@@ -337,14 +340,14 @@ for index, row in pfa.iterrows():
        dftemp=pd.DataFrame({'Handle':handler})
 
 
-  print(option1val)
-  print(imagevurl)
-  print(imageposition)
-  print(option1)
-  print(tags)
-  print(Title)
-  print(handler)
-  print("_______________________________________________________________________________________________________________________________")
+#   print(option1val)
+#   print(imagevurl)
+#   print(imageposition)
+#   print(option1)
+#   print(tags)
+#   print(Title)
+#   print(handler)
+#   print("_______________________________________________________________________________________________________________________________")
 st.header("😊 🙌")
 st.header("Yay ! '{}'  Products Ready to be uploaded ".format(dfshopify["Handle"].nunique()))
 st.header("")
