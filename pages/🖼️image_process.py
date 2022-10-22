@@ -71,7 +71,7 @@ if st.button("Process Images"):
       except:
         st.write("An exception occurred")
       remaining=remaining-1
-      st.write(remaining)
+      st.write("Remaining :",remaining)
   
 
   
