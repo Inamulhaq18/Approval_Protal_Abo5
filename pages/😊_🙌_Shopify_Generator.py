@@ -71,6 +71,7 @@ rowdata={}
 dfshopify=pd.DataFrame(columns=shopifycolumns)
 
 def geturlfor(imgs,row):
+         try: 
           if "R" in str(imgs):
             imgs=imgs.replace("R","")
             p_img=row["Product_image_P_url"].replace("{","")
@@ -84,6 +85,8 @@ def geturlfor(imgs,row):
             R_img=row["Product_image_R_url"].split(",")
             image_link=R_img[int(imgs-1)]
             return(image_link)
+          except:
+               st.write(data)
 
 #The main program
 for index, row in pfa.iterrows():
