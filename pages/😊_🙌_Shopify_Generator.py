@@ -209,6 +209,7 @@ for index, row in pfa.iterrows():
                urlsdataa=geturlfor(dataa[0],row)#this needs to return url for a 1,2,3,R1
             except:
                st.write(dataa)
+               st.write(row['Product_Name_en'])
             urlsdata.append(urlsdataa)
 
           imagevurl=urlsdata
