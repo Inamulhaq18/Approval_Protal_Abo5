@@ -85,7 +85,7 @@ def geturlfor(imgs,row):
             R_img=row["Product_image_R_url"].split(",")
             image_link=R_img[int(imgs-1)]
             return(image_link)
-          except:
+         except:
                st.write(data)
 
 #The main program
