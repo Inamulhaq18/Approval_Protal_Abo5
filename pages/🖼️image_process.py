@@ -49,13 +49,14 @@ pfa.dropna(subset=["Product_Name_en"])
 #pfa=pfa[pfa['Product_Name_en']!=""]
 pfa=pfa[pfa['Product_image_R_url']!=""]
 pfa=pfa[pfa['Product_image_P_url']==""]
-
+AgGrid(pfa)
+st.write("2nd")
 
 shopifycolumnss=pd.DataFrame(columns=shopifycolumns)
 list(shopifycolumnss.columns)
 
 pfa=pfa.dropna(subset=['variety'])
-#AgGrid(pfa)
+AgGrid(pfa)
 noimage=(pfa.shape[0])
 st.title("Products to be processed - ")
 st.title(noimage)
