@@ -46,6 +46,7 @@ pfa=pfa[pfa["Product_id"]>687]
 
 
 pfa=pfa[pfa["Product_approval_status"]==0]
+pfa=(pfa[pfa['Product_image_P_url']!=""])
 if pfa.shape[0] ==0:
         "No New Product Available to approve 😔"
 if pfa.shape[0] !=0:
