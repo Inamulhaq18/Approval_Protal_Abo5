@@ -38,21 +38,20 @@ dat = pd.read_sql_query(sql,conn)
 pfa=dat
 conn.close()
 pfa=pfa[pfa["Product_id"]>650]
-st.write(pfa[pfa['Product_id']==1310]['Product_image_P_url']=="asd")
+pfa=(pfa[pfa['Product_image_P_url']==""])
 st.write("RURL")
 #pfa=pfa[pfa["Product_approval_status"]==1]
 #pfa=pfa[pfa["shopify_status"]==1]
 pfa=pfa.sort_values(by="Product_id")
-pfa=pfa.drop_duplicates(subset='Product_Name_en', keep="last")
-#Number of items 
-number_of_items=(pfa[pfa["Product_live_status"]==1]).shape[1]
-
 pfa.dropna(subset=["Product_Name_en"])
+pfa=pfa.drop_duplicates(subset='Product_Name_en', keep="last")
+
 #pfa=pfa[pfa['Product_Name_en']!=""]
 pfa=pfa[pfa['Product_image_R_url']!=""]
 
-pfa=pfa[pfa['Product_image_P_url']==""]
-
+#pfa=pfa[pfa['Product_image_P_url']==""]
+#Number of items 
+number_of_items=(pfa[pfa["Product_live_status"]==1]).shape[1]
 
 shopifycolumnss=pd.DataFrame(columns=shopifycolumns)
 list(shopifycolumnss.columns)
