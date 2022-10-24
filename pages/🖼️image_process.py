@@ -57,17 +57,17 @@ shopifycolumnss=pd.DataFrame(columns=shopifycolumns)
 list(shopifycolumnss.columns)
 
 pfa=pfa.dropna(subset=['variety'])
-AgGrid(pfa)
+#AgGrid(pfa)
 noimage=(pfa.shape[0])
 st.title("Products to be processed - ")
 st.title(noimage)
 
 if st.button("Process Images"):
     remaining=pfa.shape[0]
-    st.write(remaining)
+    #st.write(remaining)
     for index, row in pfa.iterrows():
       parameter=row['Product_image_R_url']
-      st.write(type(parameter))
+      #st.write(type(parameter))
       try:
         a=bgprocess(parameter)
       except:
