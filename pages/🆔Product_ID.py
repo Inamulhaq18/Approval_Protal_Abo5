@@ -13,7 +13,7 @@ from abo5s3 import *
 import urllib.request
 
 
-st.header("Hi, Mannar")
+st.header("Hi, Najla")
 def skip(product_id):
         conn=psycopg2.connect("postgres://ue0bragorjpsfg:p3401de69df0671d626efa0688fbb4b255afe17a00d95341e8504b5442c3516f3@ec2-52-18-7-194.eu-west-1.compute.amazonaws.com:5432/d1en285kafvdds") 
         curr=conn.cursor()
