@@ -47,6 +47,7 @@ pfa=pfa[pfa["Product_id"]>687]
 
 pfa=pfa[pfa["Product_approval_status"]==0]
 pfa=(pfa[pfa['Product_image_P_url']!=""])
+pfa=pfa.drop_duplicates(subset='Product_Name_en', keep="last")
 if pfa.shape[0] ==0:
         "No New Product Available to approve 😔"
 if pfa.shape[0] !=0:
