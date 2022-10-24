@@ -48,7 +48,7 @@ number_of_items=(pfa[pfa["Product_live_status"]==1]).shape[1]
 pfa.dropna(subset=["Product_Name_en"])
 #pfa=pfa[pfa['Product_Name_en']!=""]
 pfa=pfa[pfa['Product_image_R_url']!=""]
-AgGrid(pfa)
+AgGrid(pfa[pfa['Product_id']==1310])
 st.write("RURL")
 pfa=pfa[pfa['Product_image_P_url']==""]
 AgGrid(pfa)
