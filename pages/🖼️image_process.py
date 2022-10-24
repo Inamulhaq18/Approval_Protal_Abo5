@@ -38,21 +38,21 @@ dat = pd.read_sql_query(sql,conn)
 pfa=dat
 conn.close()
 pfa=pfa[pfa["Product_id"]>650]
+AgGrid(pfa[pfa['Product_id']==1310])
+st.write("RURL")
 #pfa=pfa[pfa["Product_approval_status"]==1]
 #pfa=pfa[pfa["shopify_status"]==1]
 pfa=pfa.sort_values(by="Product_id")
 pfa=pfa.drop_duplicates(subset='Product_Name_en', keep="last")
 #Number of items 
 number_of_items=(pfa[pfa["Product_live_status"]==1]).shape[1]
-AgGrid(pfa[pfa['Product_id']==1310])
-st.write("RURL")
+
 pfa.dropna(subset=["Product_Name_en"])
 #pfa=pfa[pfa['Product_Name_en']!=""]
 pfa=pfa[pfa['Product_image_R_url']!=""]
 
 pfa=pfa[pfa['Product_image_P_url']==""]
-AgGrid(pfa)
-st.write("2nd")
+
 
 shopifycolumnss=pd.DataFrame(columns=shopifycolumns)
 list(shopifycolumnss.columns)
