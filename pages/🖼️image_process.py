@@ -38,7 +38,7 @@ dat = pd.read_sql_query(sql,conn)
 pfa=dat
 conn.close()
 pfa=pfa[pfa["Product_id"]>650]
-AgGrid(pfa[pfa['Product_id']==1310])
+AgGrid(pfa[pfa['Product_id']==1310]['Product_image_P_url']=="")
 st.write("RURL")
 #pfa=pfa[pfa["Product_approval_status"]==1]
 #pfa=pfa[pfa["shopify_status"]==1]
