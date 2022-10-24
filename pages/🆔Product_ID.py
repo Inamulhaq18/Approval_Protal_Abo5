@@ -45,6 +45,7 @@ st.title("Product Approval Portal - Auto 👍")
 index=st.number_input('Index',step=1,value=0)
 if index!=0:       
                 pfa=pfa[pfa["Product_id"]==index]
+                pfa=(pfa[pfa['Product_image_P_url']!=""])
 
 
                 #pfa=pfa[pfa["Product_approval_status"]==0]
