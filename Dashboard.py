@@ -23,6 +23,8 @@ pfa=dat.copy()
 st.title("Dashboard")
 
 pfa=pfa[pfa["Product_live_status"]==0]
+pfa=pfa[pfa["Product_id"]>687]
+dat=dat[dat["Product_id"]>687]
 pfa.reset_index(inplace=True)
 
 
