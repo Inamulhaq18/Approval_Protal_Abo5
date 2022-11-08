@@ -87,10 +87,15 @@ def bgremove(urls):
     print(urls)
     Purl=[]
     for url in urls:
+        st.write("1")
         img=removebgapi(url)
+        st.write("2")
         img=addwhitebg(img)
+        st.write("3")
         img=img.rotate(-90)
+        st.write("4")
         link=pushtos3(img)
+        st.write("5")
         Purl.append(link)
     print("bgremove completed")
     return(Purl)   
