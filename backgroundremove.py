@@ -26,7 +26,7 @@ def removebgapi(links):
     st.write("-7")
     st.write(img.size)
     st.write("-8")
-    img.thumbnail((500, 500))
+    img.thumbnail((300, 300))
     st.write("-9")
     st.write(img.size)
     st.write("-10")
