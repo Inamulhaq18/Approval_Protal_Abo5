@@ -114,6 +114,7 @@ def bgprocess(rurl):
     urls=Rurls.split(", ")
     #st.write(type(urls))
     Purl=bgremove(urls)
+    st.write("got Purl")
     print("_________PURL_________")
     print(Purl)
     pushdbupdate(Rurls,Purl)
