@@ -29,10 +29,8 @@ def removebgapi(links):
     img.thumbnail((350, 350))
     st.write("-9")
     st.write(img.size)
-    st.image(img)
-    st.write(type(img))
+    st.write("-10")
     img.save(buffer, format="PNG")
-    st.write(img)
     st.write("-11")
     img_b64 = base64.b64encode(buffer.getvalue())
     st.write("-12")
@@ -40,11 +38,6 @@ def removebgapi(links):
     st.write("-13")
     imgs=str(imgs).replace("b'","")
     st.write("-14")
-    ###########################
-    imgdatainam = base64.b64decode(imgs)
-    iminam = Image.open(BytesIO(imgdatainam))
-    st.write(iminam.size)
-    ###################################
     payloaddata={"data": ["data:image/jpeg;base64,"+imgs,10,"alpha matting"]}
     st.write("-15")
     r = requests.post(url='https://syedinamulhaq-remove-bg.hf.space/+/api/predict/', json=payloaddata)
