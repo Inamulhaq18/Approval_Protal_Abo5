@@ -40,6 +40,11 @@ def removebgapi(links):
     st.write("-13")
     imgs=str(imgs).replace("b'","")
     st.write("-14")
+    ###########################
+    imgdatainam = base64.b64decode(img_b64)
+    iminam = Image.open(io.BytesIO(imgdatainam))
+    st.write(iminam)
+    ###################################
     payloaddata={"data": ["data:image/jpeg;base64,"+imgs,10,"alpha matting"]}
     st.write("-15")
     r = requests.post(url='https://hf.space/embed/KenjieDec/RemBG/+/api/predict', json=payloaddata)
