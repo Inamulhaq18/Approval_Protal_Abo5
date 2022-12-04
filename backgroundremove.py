@@ -41,7 +41,7 @@ def removebgapi(links):
     imgs=str(imgs).replace("b'","")
     st.write("-14")
     ###########################
-    imgdatainam = base64.b64decode(img_b64)
+    imgdatainam = base64.b64decode(imgs)
     iminam = Image.open(io.BytesIO(imgdatainam))
     st.write(iminam)
     ###################################
