@@ -47,7 +47,7 @@ def removebgapi(links):
     ###################################
     payloaddata={"data": ["data:image/jpeg;base64,"+imgs,10,"alpha matting"]}
     st.write("-15")
-    r = requests.post(url='https://syedinamulhaq-remove-bg.hf.space/+/api/predict', json=payloaddata)
+    r = requests.post(url='https://syedinamulhaq-remove-bg.hf.space/+/api/predict/', json=payloaddata)
     st.write("-16")
     st.write(r)
     opimg=str(r.json()["data"][0]).replace("data:image/png;base64,","")
