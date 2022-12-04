@@ -35,12 +35,13 @@ def removebgapi(links):
     st.write(img)
     st.write("-11")
     img_b64 = base64.b64encode(buffer.getvalue())
-    st.write(img_b64)
     st.write("-12")
     imgs=img_b64
     st.write("-13")
     imgs=str(imgs).replace("b'","")
     st.write("-14")
+    imgcheck = Image.open(BytesIO(imgs))
+    st.write(imgcheck.size)
     payloaddata={"data": ["data:image/jpeg;base64,"+imgs,10,"alpha matting"]}
     st.write("-15")
     st.write(payloaddata)
