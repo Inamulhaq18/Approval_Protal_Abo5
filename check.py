@@ -56,5 +56,5 @@ def removebgapi(links):
 #     imot = Image.open(BytesIO(base64.b64decode(opimg)))
     st.write("-19")
     return(imot)
-intttt=st.txt_input('open')
+intttt=st.text_input('Movie title', 'Life of Brian')
 removebgapi(intttt)
