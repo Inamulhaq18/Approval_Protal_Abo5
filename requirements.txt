@@ -1,6 +1,6 @@
 streamlit
-requests==2.27.1
-s3fs==0.4.2
+requests
+s3fs
 boto3==1.21.32
 botocore==1.24.32
 sqlalchemy==1.4.32
