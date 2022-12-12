@@ -9,8 +9,6 @@ import streamlit as st
 from rembg import remove
 
 
-response = requests.get(url)
-img = Image.open(BytesIO(response.content))
 
 def removebgapi(links):
     st.write(links)
