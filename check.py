@@ -11,6 +11,7 @@ from rembg import remove
 
 
 def removebgapi(links):
+    st.write(links)
     st.write("inside removebgapi")
     st.write(links)
     st.write("-1")
