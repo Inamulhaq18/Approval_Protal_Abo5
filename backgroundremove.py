@@ -12,6 +12,7 @@ from PIL import Image
 
 
 def removebgapi(links):
+    st.write("in")
     st.write(links)
     urllib.request.urlretrieve(links,"gfg.png")
     img = Image.open("gfg.png")
