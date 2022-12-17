@@ -2,4 +2,5 @@ streamlit
 requests==2.27.1
 s3fs==0.4.2
 pillow
+urllib3
 rembg
